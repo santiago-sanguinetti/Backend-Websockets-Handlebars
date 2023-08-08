@@ -13,7 +13,7 @@ Este proyecto es una aplicación Node.js con Express que gestiona productos util
    ```
 2. Navega al directorio del proyecto:
    ```bash
-   cd nombre-del-proyecto
+   cd Backend-Tarea3
    ```
 4. Instala las dependencias utilizando npm:
    ```bash
