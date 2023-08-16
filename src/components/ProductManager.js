@@ -7,15 +7,26 @@ class ProductManager {
         this.path = path;
     }
 
-    async addProduct(title, description, price, thumbnail, code, stock) {
+    async addProduct(
+        title,
+        description,
+        code,
+        price,
+        status,
+        stock,
+        category,
+        thumbnails
+    ) {
         const newProduct = {
             id: this.nextProductId,
             title,
             description,
-            price,
-            thumbnail,
             code,
+            price,
+            status,
             stock,
+            category,
+            thumbnails,
         };
 
         if (this.products.find((p) => p.code === newProduct.code)) {
@@ -55,7 +66,7 @@ class ProductManager {
 
     async updateProduct(id, fieldsToChange) {
         try {
-            const products = this.getProducts();
+            const products = await this.getProducts();
 
             const productIndex = products.findIndex((p) => p.id === id);
 
@@ -77,7 +88,7 @@ class ProductManager {
 
     async deleteProduct(id) {
         try {
-            const products = this.getProducts();
+            const products = await this.getProducts();
 
             const productIndex = products.findIndex((p) => p.id === id);
 
@@ -95,7 +106,14 @@ class ProductManager {
     }
 
     async writeProductsToFile(products) {
-        await fs.writeFileSync(this.path, JSON.stringify(products, null, 2));
+        try {
+            await fs.writeFileSync(
+                this.path,
+                JSON.stringify(products, null, 2)
+            );
+        } catch {
+            console.error("Error al escribir el archivo.");
+        }
     }
 }
 

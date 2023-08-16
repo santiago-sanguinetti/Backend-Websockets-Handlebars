@@ -1,5 +1,5 @@
-# Backend - Tarea3 - Servidores web
-Este proyecto es una aplicación Node.js con Express que gestiona productos utilizando un administrador de productos.
+# Backend - Primera entrega - Proyecto final
+Esta es una aplicación que te permite gestionar productos y carritos de compras. Puedes agregar productos, crear carritos, agregar productos a los carritos y más.
 
 ## Cómo utilizar esta aplicación
 ### Requisitos
@@ -9,27 +9,46 @@ Este proyecto es una aplicación Node.js con Express que gestiona productos util
 ### Instalación
 1. Descarga o clona este repositorio a tu máquina local:
    ```bash
-   git clone https://github.com/santiago-sanguinetti/Backend-Tarea3.git
+   git clone https://github.com/santiago-sanguinetti/Backend-ProyectoFinal.git
    ```
-2. Navega al directorio del proyecto:
-   ```bash
-   cd Backend-Tarea3
-   ```
-4. Instala las dependencias utilizando npm:
+2. Abre una terminal en la ubicación del repositorio clonado.
+   
+3. Instala las dependencias utilizando npm:
    ```bash
    npm install
    ```
-### Uso
-1. Navega al directorio `src`:
-   ```bash
-   cd src
-   ```
-2. Inicia el servidor:
-   ```bash
-   node app.js
-   ```
-3. Abre tu navegador web y accede a http://localhost:8080 para ver el mensaje de bienvenida.
-4. Para obtener la lista de productos, accede a http://localhost:8080/products.
 
-   - Puedes agregar un parámetro de consulta ?limit= para limitar la cantidad de productos mostrados, por ejemplo: http://localhost:8080/products?limit=5.
-5. Para obtener un producto específico por su ID, accede a http://localhost:8080/products/:pid, reemplazando :pid con el ID del producto deseado, por ejemplo: http://localhost:8080/products/1.
+### Uso
+1. Inicia el servidor:
+   ```bash
+   npm start
+   ```
+2. Abre Postman u otra herramienta similar para probar las rutas de la aplicación.
+
+### Rutas Disponibles
+
+#### Productos
+
+- `GET /api/products`: Obtiene una lista de todos los productos. Puede incluir el parámetro `limit` para limitar el número de productos devueltos.
+
+- `GET /api/products/:id`: Obtiene un producto por su ID.
+
+- `POST /api/products`: Agrega un nuevo producto. Requiere un cuerpo JSON con los detalles del producto.
+
+- `PUT /api/products/:id`: Actualiza un producto existente. Requiere un cuerpo JSON con los campos a modificar.
+
+- `DELETE /api/products/:id`: Elimina un producto por su ID.
+
+#### Carritos
+
+- `GET /api/carts`: Obtiene una lista de todos los carritos. Puede incluir el parámetro `limit` para limitar el número de carritos devueltos.
+
+- `GET /api/carts/:id`: Obtiene un carrito por su ID.
+
+- `POST /api/carts`: Crea un nuevo carrito vacío.
+
+- `POST /api/carts/:cid/product/:pid`: Agrega un producto al carrito especificado. Requiere un cuerpo JSON con el ID del producto y la cantidad.
+
+#### Nota
+
+- `:id`, `:cid` y `:pid` en las rutas son parámetros que deben ser reemplazados con los IDs reales correspondientes.
