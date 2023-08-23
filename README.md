@@ -1,15 +1,23 @@
-# Backend - Primera entrega - Proyecto final
-Esta es una aplicación que te permite gestionar productos y carritos de compras. Puedes agregar productos, crear carritos, agregar productos a los carritos y más.
+# Backend - Websockets + Handlebars
+Este proyecto es parte del curso de Desarrollo Backend de CoderHouse. El objetivo de este proyecto es crear una aplicación web que permita administrar productos y carritos de compra utilizando tecnologías como Node.js, Express, Handlebars y Socket.io.
+
+## Funcionalidades
+
+- Gestión de productos: Agregar, listar, actualizar y eliminar productos.
+- Gestión de carritos: Agregar y listar carritos de compra.
+- Vista en tiempo real de productos utilizando Socket.io.
+- Integración de Handlebars para las vistas.
 
 ## Cómo utilizar esta aplicación
 ### Requisitos
-- Node.js (v14 o superior)
+- Node.js: [Enlace de descarga](https://nodejs.org/)
 - npm (Node Package Manager)
+- Postman (para probar las API)
 
 ### Instalación
 1. Descarga o clona este repositorio a tu máquina local:
    ```bash
-   git clone https://github.com/santiago-sanguinetti/Backend-ProyectoFinal.git
+   git clone https://github.com/santiago-sanguinetti/Backend-Websockets-Handlebars.git
    ```
 2. Abre una terminal en la ubicación del repositorio clonado.
    
@@ -23,7 +31,12 @@ Esta es una aplicación que te permite gestionar productos y carritos de compras
    ```bash
    npm start
    ```
-2. Abre Postman u otra herramienta similar para probar las rutas de la aplicación.
+2. Abre tu navegador y visita: `http://localhost:8080`
+
+## API Endpoints
+
+- `/api/products`: Endpoints relacionados con la gestión de productos.
+- `/api/carts`: Endpoints relacionados con la gestión de carritos.
 
 ### Rutas Disponibles
 
@@ -52,3 +65,8 @@ Esta es una aplicación que te permite gestionar productos y carritos de compras
 #### Nota
 
 - `:id`, `:cid` y `:pid` en las rutas son parámetros que deben ser reemplazados con los IDs reales correspondientes.
+
+## Vistas
+
+- `/`: Vista de inicio con la lista de productos.
+- `/realtimeproducts`: Vista en tiempo real de productos utilizando Socket.io.
