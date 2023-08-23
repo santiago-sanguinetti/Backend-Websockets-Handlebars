@@ -4,7 +4,7 @@ const srvResponse = document.getElementById("srvResponse");
 
 socket.on("realTimeProducts", (data) => {
     const productsContainer = document.getElementById("srvResponse");
-    productsContainer.innerHTML = ""; // Clear the container
+    productsContainer.innerHTML = "";
 
     const table = document.createElement("table");
     table.className = "table table-striped table-hover";
@@ -37,7 +37,7 @@ socket.on("realTimeProducts", (data) => {
 
     productsContainer.appendChild(table);
 });
-// Función para agregar un nuevo producto
+
 const addProduct = () => {
     const title = document.getElementById("title").value;
     const description = document.getElementById("description").value;
@@ -60,7 +60,6 @@ const addProduct = () => {
     socket.emit("newProduct", product);
 };
 
-// Asignar la función al botón de agregar producto
 const btnAddProduct = document.getElementById("btnAddProduct");
 btnAddProduct.addEventListener("click", addProduct);
 
