@@ -3,12 +3,12 @@ function createProductsFile(productManagerInstance) {
         productManagerInstance.addProduct(
             "producto prueba",
             "Este es un producto prueba",
-            200,
-            "Sin imagen",
             `abc${i}`,
-            25
+            200,
+            25,
+            "Sin categoria",
+            "Sin imagen"
         );
     }
 }
-
 export default createProductsFile;
