@@ -1,5 +1,6 @@
 # Backend - Websockets + Handlebars
 Este proyecto es parte del curso de Desarrollo Backend de CoderHouse. El objetivo de este proyecto es crear una aplicación web que permita administrar productos y carritos de compra utilizando tecnologías como Node.js, Express, Handlebars y Socket.io.
+La versión final se puede encontrar en el [repositorio](https://github.com/santiago-sanguinetti/CH_Backend_Project/)
 
 ## Funcionalidades
 
